@@ -46,8 +46,7 @@ public class CollisionController : MonoBehaviour {
 			}
 		
 		/* Collision with Trees */
-		} else if (col.gameObject.name == "tree1(Clone)" || col.gameObject.name == "tree2(Clone)" ||
-				   col.gameObject.name == "tree3(Clone)" || col.gameObject.name == "tree4(Clone)") {
+		} else if (col.gameObject.name == "tree1(Clone)" || col.gameObject.name == "tree2(Clone)") {
 			charController.canMove = false;
 			if (gameObject.name == "LeftCollider" && charController.lastJump == JumpDirection.left) { // left collider
 				charController.endPosition.z -= CharController.jumpDistance;
@@ -81,8 +80,7 @@ public class CollisionController : MonoBehaviour {
 
 	void OnTriggerExit(Collider col) { // Exit trigger, just for Trees
 		if (!charController.canMove) {
-			if (col.gameObject.name == "tree1(Clone)" || col.gameObject.name == "tree2(Clone)" ||
-			    col.gameObject.name == "tree3(Clone)" || col.gameObject.name == "tree4(Clone)") {
+			if (col.gameObject.name == "tree1(Clone)" || col.gameObject.name == "tree2(Clone)") {
 				charController.canMove = true;
 			}
 		} 

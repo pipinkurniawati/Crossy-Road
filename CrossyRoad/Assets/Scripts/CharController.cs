@@ -51,7 +51,7 @@ public class CharController : MonoBehaviour {
 		percentage = 1f;
 		endPosition = gameObject.transform.position;
 		environmentMaker = GameObject.Find ("Environment").GetComponent<EnvironmentMaker>();
-		cameraController = GameObject.Find ("CameraContainer").GetComponent<CameraController> ();
+		cameraController = GameObject.Find ("Level").GetComponent<CameraController> ();
 		audioSource = gameObject.GetComponent<AudioSource> ();
 	}
 
