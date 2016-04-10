@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ScoreController : MonoBehaviour {
 	private EnvironmentMaker environmentMaker;
-	private int score;
+	public int score;
 	public int coin;
 
 	void Start () {
@@ -15,18 +15,19 @@ public class ScoreController : MonoBehaviour {
 		
 	void Update () {
 		score = environmentMaker.upperRoadPos;
-		/* Score Update */
-		if (score >= 0) {
-			if (gameObject.name == "ScoreText") {
-				gameObject.GetComponent<Text> ().text = score.ToString ();
-			}
-		}
 
-		/* Coin Update */
+		//collected coins
 		if (coin >= 0) {
 			if (gameObject.name == "CoinText") {
 				gameObject.GetComponent<Text> ().text = coin.ToString ();
 			} 
 		}
+
+		//collected score
+		/*if (score >= 0) {
+			if (gameObject.name == "ScoreText") {
+				gameObject.GetComponent<Text> ().text = score.ToString ();
+			}
+		}*/
 	}
 }
